@@ -127,4 +127,39 @@ body {
   width:100%; height:100%;
   pointer-events:none;
 }
+/* 🎥 Video Gallery */
+.videoWrap {
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.videoCard {
+  background:white;
+  padding:10px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  width:280px;
+}
+
+.videoCard video {
+  width:100%;
+  border-radius:10px;
+}
+
+.videoCard p {
+  margin-top:8px;
+  font-weight:500;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width:768px){
+  .left, .right {
+    align-self:center;
+    margin:10px 0;
+  }
+  .line { display:none; }
+  .videoCard { width:90%; }
+}
 
