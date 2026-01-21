@@ -1,63 +1,87 @@
 body {
-  margin: 0;
+  margin:0;
   font-family: 'Poppins', sans-serif;
-  text-align: center;
-  background: linear-gradient(120deg,#ffdee9,#b5fffc);
-  scroll-behavior: smooth;
+  text-align:center;
+  background: linear-gradient(120deg,#fbc2eb,#a6c1ee,#fad0c4);
+  overflow-x:hidden;
 }
 
 .section {
-  min-height: 100vh;
-  padding: 60px 20px;
+  min-height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
+  padding:60px 20px;
+  position:relative;
+  z-index:1;
 }
 
-.hero h1 {
-  font-size: 2.5em;
-  max-width: 600px;
+.scrollHint { margin-top:20px; animation:bounce 1s infinite; }
+@keyframes bounce {50%{transform:translateY(10px);}}
+
+/* 💌 Envelope */
+.envelope {
+  font-size:80px;
+  cursor:pointer;
+  transition:transform 0.5s;
+}
+.envelope.open { transform:scale(0); }
+
+#typewriter { max-width:600px; }
+
+/* 💗 Timeline */
+.timeline { position:relative; }
+.line {
+  position:absolute;
+  width:4px;
+  height:70%;
+  background:#ff9acb;
+  top:15%;
+  left:50%;
+  transform:translateX(-50%);
+  border-radius:10px;
 }
 
-.scrollHint {
-  margin-top:20px;
-  animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(10px);}
-}
-
-.timeline .event {
+.event {
   background:white;
-  margin:10px;
-  padding:15px 25px;
+  padding:12px 20px;
   border-radius:20px;
   box-shadow:0 0 10px #ffb6c1;
+  width:220px;
+  margin:20px;
+  cursor:pointer;
+  position:relative;
 }
 
-.photos {
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
+.left { align-self:flex-start; margin-left:20%; }
+.right { align-self:flex-end; margin-right:20%; }
+
+#eventMsg { margin-top:20px; font-size:1.1em; }
+
+/* 📸 Polaroids */
+.photos { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
 
 .polaroid {
   background:white;
   padding:10px;
   box-shadow:0 5px 15px rgba(0,0,0,0.2);
   transform:rotate(-3deg);
+  transition:0.3s;
+}
+.polaroid:nth-child(2){ transform:rotate(2deg); }
+.polaroid:nth-child(3){ transform:rotate(-6deg); }
+
+.polaroid:hover {
+  transform:rotate(0deg) scale(1.05);
+  box-shadow:0 0 20px #ff9acb;
 }
 
 .polaroid img {
-  width:200px;
-  height:200px;
-  object-fit:cover;
+  width:200px; height:200px; object-fit:cover;
 }
 
+/* ✨ Reasons */
 .reasons button {
   padding:10px 20px;
   border:none;
@@ -68,16 +92,39 @@ body {
   cursor:pointer;
 }
 
+/* 💖 Final */
 .final {
-  background:black;
+  background: radial-gradient(circle at top,#2b1055,#000);
   color:white;
 }
 
+#bigHeart {
+  font-size:80px;
+  cursor:pointer;
+  animation:pulse 1s infinite;
+}
+@keyframes pulse {
+  50%{transform:scale(1.2);}
+}
+
+#finalMsg { margin-top:20px; }
+
+/* 🎵 Music Button */
 #musicBtn {
   position:fixed;
   top:10px;
   right:10px;
+  z-index:10;
   padding:8px 12px;
   border-radius:20px;
   border:none;
 }
+
+/* 💕 Floating hearts canvas */
+#bgHearts, #fireflies {
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  pointer-events:none;
+}
+
