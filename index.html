@@ -7,51 +7,63 @@
 </head>
 <body>
 
-<!-- Background Music -->
+<!-- Floating Hearts Background -->
+<canvas id="bgHearts"></canvas>
+
+<!-- Music -->
 <audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 <button id="musicBtn">🔊 Play Music</button>
 
-<!-- Section 1: Typewriter Letter -->
-<section class="section hero">
+<!-- 💌 Envelope Intro -->
+<section class="section intro">
+  <div id="envelope" class="envelope">💌</div>
+  <p>Open your message, Muntaha ✨</p>
   <h1 id="typewriter"></h1>
-  <p class="scrollHint">Scroll down ↓</p>
+  <p class="scrollHint">Scroll ↓</p>
 </section>
 
-<!-- Section 2: Timeline -->
+<!-- 💗 Timeline Path -->
 <section class="section timeline">
   <h2>Our Story, Muntaha 🌸</h2>
-  <div class="event">✨ The day I met Muntaha</div>
-  <div class="event">💬 Our first chat</div>
-  <div class="event">📞 Our first call</div>
-  <div class="event">📸 Our first memory</div>
-  <div class="event">💖 Still writing our story</div>
+  <div class="line"></div>
+
+  <div class="event left" data-msg="I still remember how happy I felt ✨">✨ The day I met you</div>
+  <div class="event right" data-msg="Your reply made my day 💬">💬 Our first chat</div>
+  <div class="event left" data-msg="Hearing your voice was special 📞">📞 Our first call</div>
+  <div class="event right" data-msg="A moment I’ll never forget 📸">📸 Our first memory</div>
+  <div class="event left" data-msg="And our story is still growing 💖">💖 Still writing our story</div>
+
+  <p id="eventMsg"></p>
 </section>
 
-<!-- Section 3: Polaroid Gallery -->
+<!-- 📸 Polaroid Gallery -->
 <section class="section gallery">
-  <h2>Memories with You 📷</h2>
+  <h2>Memories 📷</h2>
   <div class="photos">
-    <div class="polaroid"><img src="photo1.jpg"><p>Your Smile 💕</p></div>
-    <div class="polaroid"><img src="photo2.jpg"><p>Fun Moments 🌈</p></div>
-    <div class="polaroid"><img src="photo3.jpg"><p>Always ✨</p></div>
+    <div class="polaroid"><img src="photo1.jpg"><p>Your smile 💕</p></div>
+    <div class="polaroid"><img src="photo2.jpg"><p>Fun moments 🌈</p></div>
+    <div class="polaroid"><img src="photo3.jpg"><p>Forever ✨</p></div>
   </div>
 </section>
 
-<!-- Section 4: Reasons -->
+<!-- ✨ Reasons -->
 <section class="section reasons">
   <h2>Why I Like You, Muntaha 💗</h2>
   <button id="reasonBtn">Click Me</button>
   <p id="reasonText"></p>
 </section>
 
-<!-- Section 5: Final Surprise -->
+<!-- 💖 Secret Final Reveal -->
 <section class="section final">
-  <h1>💖 Muntaha, You Are My Favorite Surprise 💖</h1>
-  <canvas id="hearts"></canvas>
+  <h2>Tap the heart below 👇</h2>
+  <div id="bigHeart">💖</div>
+  <h1 id="finalMsg"></h1>
+  <canvas id="fireflies"></canvas>
 </section>
 
 <script src="script.js"></script>
 </body>
 </html>
+
