@@ -18,12 +18,22 @@ function typeWriter(){
   }
 }
 
-// 🎵 Music
+// 🎵 Music autoplay after first interaction
 const music = document.getElementById("bgMusic");
-document.getElementById("musicBtn").onclick = () => {
+document.getElementById("musicBtn").onclick = toggleMusic;
+
+function toggleMusic(){
   if(music.paused) music.play();
   else music.pause();
+}
+
+// Auto start when envelope opens
+envelope.onclick = () => {
+  envelope.classList.add("open");
+  typeWriter();
+  music.play().catch(()=>{}); 
 };
+
 
 // 💗 Timeline click reveal
 document.querySelectorAll(".event").forEach(ev=>{
